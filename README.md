@@ -18,7 +18,7 @@ CUDA is optional. CPU inference works but every fresh CLI process pays the model
 Install directly from the OF3D GitLab repository:
 
 ```bash
-python -m pip install "git+https://gitlab.of3d.com/liangcheng/of3d-laya-cli.git"
+python -m pip install "git+https://gitlab.of3d.com/intEngine/of3d-laya-cli.git"
 ```
 
 Verify the lightweight CLI without loading the model:
@@ -59,7 +59,7 @@ Recommended connector settings:
 | Connector type | CLI connector |
 | Network | Public network available |
 | Runtime | Python `>=3.11` |
-| Install | `python -m pip install "git+https://gitlab.of3d.com/liangcheng/of3d-laya-cli.git"` |
+| Install | `python -m pip install "git+https://gitlab.of3d.com/intEngine/of3d-laya-cli.git"` |
 | Authorization | Leave empty |
 | Revoke authorization | Leave empty |
 | Authorization status | Leave empty |
@@ -104,4 +104,3 @@ Environment variables provide defaults:
 ## Attribution
 
 This adapter is licensed under Apache-2.0. Laya and its pretrained weights are maintained by Convai Innovations and upstream contributors; review their repository and model cards for their licenses and limitations.
-
