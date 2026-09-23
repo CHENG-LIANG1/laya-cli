@@ -1,0 +1,24 @@
+{
+  "state": "角色左手穿过衣服，客户要求修正，并认为动作节奏太快。",
+  "questions": {
+    "department": {
+      "type": "choice",
+      "instructions": "该反馈主要属于哪个部门？",
+      "criteria": {
+        "animation": "动作、节奏和表演问题",
+        "cfx": "布料、毛发和模拟问题",
+        "model": "模型和拓扑问题"
+      }
+    },
+    "priority": {
+      "type": "score",
+      "instructions": "返修优先级如何？",
+      "criteria": ["低", "中", "高"]
+    },
+    "needs_revision": {
+      "type": "noul",
+      "instructions": "客户是否明确要求返修？"
+    }
+  }
+}
+

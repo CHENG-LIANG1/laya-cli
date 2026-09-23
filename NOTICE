@@ -1,0 +1,7 @@
+OF3D Laya CLI
+Copyright 2026 OF3D
+
+This product depends on Laya, developed by Convai Innovations and upstream
+contributors. Laya and its pretrained model weights are distributed separately;
+see https://github.com/NandhaKishorM/laya and the associated Hugging Face model
+cards for attribution, licensing, and usage limitations.
