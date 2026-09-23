@@ -8,7 +8,7 @@ import unittest
 from contextlib import redirect_stderr, redirect_stdout
 from unittest.mock import patch
 
-from of3d_laya_cli import cli
+from laya_cli import cli
 
 
 class FakeAgent:
@@ -55,7 +55,7 @@ class CliTests(unittest.TestCase):
         self.assertEqual(stderr, "")
         result = json.loads(stdout)
         self.assertEqual(result["answers"]["route"]["choice"], "animation")
-        self.assertEqual(result["of3d_laya"]["checkpoint"], "multilingual")
+        self.assertEqual(result["laya_cli"]["checkpoint"], "multilingual")
         self.assertEqual(calls, [(cli.MODEL_ID, "multilingual", None)])
 
     def test_decide_accepts_stdin(self):

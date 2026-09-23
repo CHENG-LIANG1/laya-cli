@@ -1,3 +1,5 @@
+"""Support ``python -m laya_cli``."""
+
 from .cli import main
 
 

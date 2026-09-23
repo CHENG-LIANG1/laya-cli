@@ -3,18 +3,18 @@ requires = ["setuptools>=69", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "of3d-laya-cli"
+name = "laya-cli"
 version = "0.1.0"
-description = "JSON command-line wrapper for Laya typed decisions in OF3D connectors"
+description = "Stable JSON command-line interface for Laya typed decisions"
 readme = "README.md"
 requires-python = ">=3.10"
 license = "Apache-2.0"
 license-files = ["LICENSE", "NOTICE"]
-authors = [{ name = "OF3D" }]
+authors = [{ name = "Liang Cheng" }]
 dependencies = ["laya==0.3.7"]
 
 [project.scripts]
-of3d-laya = "of3d_laya_cli.cli:main"
+laya-cli = "laya_cli.cli:main"
 
 [project.optional-dependencies]
 dev = ["pytest>=8", "build>=1.2"]

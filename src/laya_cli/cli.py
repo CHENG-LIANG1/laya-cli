@@ -60,7 +60,7 @@ def _validate_payload(payload: Mapping[str, Any]) -> None:
 
 def _resolve_checkpoint(args: argparse.Namespace, payload: Mapping[str, Any] | None = None) -> str:
     requested = None if payload is None else payload.get("checkpoint")
-    checkpoint = requested or args.checkpoint or os.environ.get("OF3D_LAYA_CHECKPOINT", "multilingual")
+    checkpoint = requested or args.checkpoint or os.environ.get("LAYA_CLI_CHECKPOINT", "multilingual")
     if checkpoint not in CHECKPOINTS:
         allowed = ", ".join(CHECKPOINTS)
         raise CliError(f"unsupported checkpoint {checkpoint!r}; choose one of: {allowed}")
@@ -69,7 +69,7 @@ def _resolve_checkpoint(args: argparse.Namespace, payload: Mapping[str, Any] | N
 
 def _resolve_device(args: argparse.Namespace, payload: Mapping[str, Any] | None = None) -> str | None:
     requested = None if payload is None else payload.get("device")
-    device = requested or args.device or os.environ.get("OF3D_LAYA_DEVICE", "auto")
+    device = requested or args.device or os.environ.get("LAYA_CLI_DEVICE", "auto")
     if device not in {"auto", "cpu", "cuda"}:
         raise CliError("device must be auto, cpu, or cuda")
     return None if device == "auto" else str(device)
@@ -104,8 +104,8 @@ def _cmd_decide(args: argparse.Namespace) -> int:
     agent = _load_agent(checkpoint, device)
     result = agent.predict(payload["state"], payload["questions"])
     if isinstance(result, dict):
-        result.setdefault("of3d_laya", {})
-        result["of3d_laya"].update(
+        result.setdefault("laya_cli", {})
+        result["laya_cli"].update(
             {
                 "checkpoint": checkpoint,
                 "device": device or "auto",
@@ -171,7 +171,7 @@ def _add_model_options(parser: argparse.ArgumentParser) -> None:
 
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
-        prog="of3d-laya",
+        prog="laya-cli",
         description="Run Laya typed decisions with stable JSON input and output.",
     )
     parser.add_argument("--version", action="version", version=f"%(prog)s {__version__}")
@@ -219,4 +219,3 @@ def main(argv: Sequence[str] | None = None) -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
-
