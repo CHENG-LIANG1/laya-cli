@@ -18,7 +18,7 @@ CUDA is optional. CPU inference works but every fresh CLI process pays the model
 Install directly from GitHub:
 
 ```bash
-python -m pip install "https://github.com/CHENG-LIANG1/laya-cli/archive/refs/heads/main.zip"
+python -m pip install "https://github.com/CHENG-LIANG1/laya-cli/archive/refs/tags/v0.1.1.zip"
 ```
 
 Verify the lightweight CLI without loading the model:
@@ -59,7 +59,7 @@ Recommended connector settings:
 | Connector type | CLI connector |
 | Network | Public network available |
 | Runtime | Python `>=3.11` |
-| Install | `python -m pip install "https://github.com/CHENG-LIANG1/laya-cli/archive/refs/heads/main.zip"` |
+| Install | `python -m pip install "https://github.com/CHENG-LIANG1/laya-cli/archive/refs/tags/v0.1.1.zip"` |
 | Authorization | Leave empty |
 | Revoke authorization | Leave empty |
 | Authorization status | Leave empty |
